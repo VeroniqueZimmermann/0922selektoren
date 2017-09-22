@@ -13,9 +13,11 @@
     nav{
         font-family: Arial, Helvetica, sans-serif;
         font-size: 13px;
-        color: mediumseagreen;
-        border: solid 1px black;
+        /*border: solid 1px black;*/
         display: inline-block;
+        background-color: transparent;
+        position: relative;
+        z-index: 20;
     }
 
     nav ul{
@@ -30,10 +32,59 @@
         display: block; /*display block, erscheint, visibility none, bzw visibility hover, auch nett*/
     }
 
+    nav li{
+        float: left;
+        
+    }
+
+    nav ul ul li{
+        clear:both;
+        background-color: darkturquoise;
+        padding:10px;
+        width: auto;
+    }
+
+    nav >ul >li>a{/*>Kindselektor>direktesKinddarunter*/
+        padding: 10px 15px;
+    }
+    
+
     a{
-        background-color: #5960C2;
         color: lightseagreen;
     }
+
+    #infobereich{
+        position:absolute;
+        top:60px;
+        left:10px;
+        z-index: 5;
+        background-color: cornflowerblue;
+    }
+
+    #einfache{
+        border: 1px solid blue;
+    }
+
+    .auf_Zeile_bleiben{
+        display: inline-block;
+    }
+
+    .auf_Zeile_bleiben::first-letter{
+        font-style: italic;
+    }
+
+    #kombinierte{
+        border: 1px solid green;
+        text-align: left;
+    }
+
+    #kombinierte tr:nth-child(even){
+        background-color:mediumpurple;
+    }
+    #kombinierte tr:nth-child(odd){
+        background-color: lightseagreen;
+    }
+
 </style>
 
 </head>
@@ -41,26 +92,49 @@
 <body>
     <nav> <!--statt div mit id-->
 <ul>
-    <li><a href="simpleselectors.html">einfache Selektoren &rArr;</a></li>
+    <li><a href="simpleselectors.html">einfache Selektoren </a>&rArr;</li>
     <li><a href="pseudoselector.html">Pseudoselektoren </a>&dArr;
         <ul>
-            <li>hover</li>
-            <li>nth-child</li>
-            <li>first</li>
-            <li>second</li>
-            <li>third</li>
-            <li>fourth</li>
-            <li>Wurstbrot</li>
-            <li>Apfeltasch</li>
-            <li>Chips</li>
-            <ul><li>Peperoni natürlich!</li></ul>
+            <li><a href="hover.html">hover</a>&rArr;</li>
+            <li><a href="nth-child.html">nth-child</a>&rArr;</li>
+            <li><a href="first.html">first</a>&rArr;</li>
+            <li><a href="wurstbrot.html">Wurstbrot</a>&rArr;</li>
+            
         </ul></li>
-    <li><a href="login.html">Login / Register</a></li>
-    <li><a href="selektoren.html">Home</a></li>
+    <li><a href="login.html">Login / Register </a>&rArr;</li>
+    <li><a href="selektoren.html">Home </a>&rArr;</li>
 </ul>
 </nav>
-Hier kommt ein Text hin.
 
+<p id="infobereich">
+    <ul id="einfache">
+        <li>Tags werden ohne Kennzeichen angesprochen</li>
+        <li>IDs mit vornangestellter # gekennzeichnet</li>
+        <li>Klassen erhalten vorab einen -> Punkt -> .</li>
+    </ul>
+    <p>
+        Als Tags können alle in HTML5 bekannten ELemente angesprochen werden.y<br>
+        IDs müssen einmalig sein, es wird zwischen <li class="auf_Zeile_bleiben">Groß-</li> und <li class="auf_Zeile_bleiben">Kleinschreibweise</li> unterschieden.<br>
+        Klassen können mehrfach zugeordnet werden.
+    </p>
+    <ul id="kombiniert">
+        <li>Tags hintereinander nur mit Leerzeichen getrennt</li>
+        <li>Tags hintereinander durch ein ~ getrennt</li>
+        <li>Tags hintereinander durch ein + getrennt</li>
+        <li>Tags hintereinander durch ein , getrennt</li>
+    </ul>
+    <p>
+        <table id="kombinierte">
+            <tr><th>Beispiel</th><th>Name</th><th>Erklärung</th></tr>
+            <tr><th>ul Leerzeichen li</th><th>Nachfahrenselektoren</th><th></th></tr>
+            <tr><th>ul > li</th><th>Kindselektoren</th><th></th></tr>
+            <tr><th>ul ~ li</th><th>Allgemeine Geschwisterselektoren</th><th></th></tr>
+            <tr><th>ul + li</th><th>Geschwisterselektoren</th><th></th></tr>
+            <tr><th>ul , li</th><th>Aufzählung</th><th>Allte die aufgezählt werden</th></tr></table>
+    </p>
+
+    Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. Hi brains mindless mortuis limbic cortex soulless creaturas optic nerve, imo evil braaiinns stalking monstra hypothalamus adventus resi hippocampus dentevil vultus brain comedat cerebella pitiutary gland viventium. Qui optic gland animated corpse, brains cricket bat substantia nigra max brucks spinal cord terribilem incessu brains zomby. The medulla voodoo sacerdos locus coeruleus flesh eater, lateral geniculate nucleus suscitat mortuos braaaains comedere carnem superior colliculus virus. Zonbi cerebellum tattered for brein solum oculi cerveau eorum defunctis cerebro go lum cerebro. Nescio brains an Undead cervello zombies. Sicut thalamus malus putrid brains voodoo horror. Nigh basal ganglia tofth eliv ingdead.
+</p>
 
 </body>
 </html>
