@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Selektoren auf einer Seite</title>
+<meta name="Keywords" content="selectors">
+<meta name="Description" content="Beispiele zu Selektoren">
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif; 
+    }
+
+    nav{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        color: mediumseagreen;
+        border: solid 1px black;
+        display: inline-block;
+    }
+
+    nav ul{
+        list-style-type: none;
+    }
+
+    nav ul ul{ /* Folgeselector durch Leerzeichen */
+        display: none;
+    }
+    
+    nav ul li:hover ul{/* Folgeselector durch Leerzeichen */
+        display: block; /*display block, erscheint, visibility none, bzw visibility hover, auch nett*/
+    }
+
+    a{
+        background-color: #5960C2;
+        color: lightseagreen;
+    }
+</style>
+
+</head>
+
+<body>
+    <nav> <!--statt div mit id-->
+<ul>
+    <li><a href="simpleselectors.html">einfache Selektoren &rArr;</a></li>
+    <li><a href="pseudoselector.html">Pseudoselektoren </a>&dArr;
+        <ul>
+            <li>hover</li>
+            <li>nth-child</li>
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+            <li>fourth</li>
+            <li>Wurstbrot</li>
+            <li>Apfeltasch</li>
+            <li>Chips</li>
+            <ul><li>Peperoni natürlich!</li></ul>
+        </ul></li>
+    <li><a href="login.html">Login / Register</a></li>
+    <li><a href="selektoren.html">Home</a></li>
+</ul>
+</nav>
+Hier kommt ein Text hin.
+
+
+</body>
+</html>
