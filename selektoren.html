@@ -5,84 +5,37 @@
 <title>Selektoren auf einer Seite</title>
 <meta name="Keywords" content="selectors">
 <meta name="Description" content="Beispiele zu Selektoren">
+<!--Link zur CSS Datei-->
+<link href="design.css" rel="stylesheet">
+
 <style>
-    body{
-        font-family: Arial, Helvetica, sans-serif; 
-    }
-
-    nav{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 13px;
-        /*border: solid 1px black;*/
-        display: inline-block;
-        background-color: transparent;
-        position: relative;
-        z-index: 20;
-    }
-
-    nav ul{
-        list-style-type: none;
-    }
-
-    nav ul ul{ /* Folgeselector durch Leerzeichen */
-        display: none;
-    }
-    
-    nav ul li:hover ul{/* Folgeselector durch Leerzeichen */
-        display: block; /*display block, erscheint, visibility none, bzw visibility hover, auch nett*/
-    }
-
-    nav li{
-        float: left;
-        
-    }
-
-    nav ul ul li{
-        clear:both;
-        background-color: darkturquoise;
-        padding:10px;
-        width: auto;
-    }
-
-    nav >ul >li>a{/*>Kindselektor>direktesKinddarunter*/
-        padding: 10px 15px;
-    }
-    
-
-    a{
-        color: lightseagreen;
-    }
-
-    #infobereich{
-        position:absolute;
-        top:60px;
-        left:10px;
-        z-index: 5;
-        background-color: cornflowerblue;
-    }
-
-    #einfache{
-        border: 1px solid blue;
-    }
-
-    .auf_Zeile_bleiben{
+    .rechteck{
+        padding: 10px;
         display: inline-block;
     }
-
-    .auf_Zeile_bleiben::first-letter{
-        font-style: italic;
+    
+    .rechteck:hover{
+        visibility: hidden; 
     }
 
-    #kombinierte{
-        border: 1px solid green;
-        text-align: left;
+    #purple{
+        background-color: purple;
     }
 
-    #kombinierte tr:nth-child(even){
-        background-color:mediumpurple;
+    #lightgreen{
+        background-color: lightgreen;
     }
-    #kombinierte tr:nth-child(odd){
-        background-color: lightseagreen;
+
+    #pink{
+        background-color: pink;
+    }
+
+    #darkslategray{
+        background-color: darkslategray ;
+    }
+    
+    #springgreen{
+        background-color: springgreen ;
     }
 
 </style>
@@ -113,10 +66,20 @@
         <li>Klassen erhalten vorab einen -> Punkt -> .</li>
     </ul>
     <p>
-        Als Tags können alle in HTML5 bekannten ELemente angesprochen werden.y<br>
+        Als Tags können alle in HTML5 bekannten ELemente angesprochen werden.<br>
         IDs müssen einmalig sein, es wird zwischen <li class="auf_Zeile_bleiben">Groß-</li> und <li class="auf_Zeile_bleiben">Kleinschreibweise</li> unterschieden.<br>
         Klassen können mehrfach zugeordnet werden.
     </p>
+    <h4>Beispiel: Rechtecke</h4>
+    <!--.rechteck-->
+    <!-- auch background-color: transparent wäre gegangen, um bei hover das rechteck verschwinden zu lassen -->
+    <div class="rechteck" id="purple">rechteck</div>
+    <div class="rechteck" id="lightgreen">rechteck</div>
+    <div class="rechteck" id="pink">rechteck</div>
+    <div class="rechteck" id="darkslategray">rechteck</div>
+    <div class="rechteck" id="springgreen">rechteck</div>
+    <div class="rechteck" style="background-color: lightgray">rechteck</div> <!-- einfacher zu ändern -->
+    <h4>Kombinationen</h4>
     <ul id="kombiniert">
         <li>Tags hintereinander nur mit Leerzeichen getrennt</li>
         <li>Tags hintereinander durch ein ~ getrennt</li>

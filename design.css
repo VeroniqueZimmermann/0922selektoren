@@ -1,0 +1,81 @@
+/* CSS Document */
+
+    body{
+        font-family: Arial, Helvetica, sans-serif; 
+    }
+
+    nav{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        /*border: solid 1px black;*/
+        display: inline-block;
+        background-color: transparent;
+        position: relative;
+        z-index: 20;
+    }
+
+    nav ul{
+        list-style-type: none;
+    }
+
+    nav ul ul{ /* Folgeselector durch Leerzeichen */
+        display: none;
+    }
+    
+    nav ul li:hover ul{/* Folgeselector durch Leerzeichen */
+        display: block; /*display block, erscheint, visibility none, bzw visibility hover, auch nett*/
+    }
+
+    nav li{
+        float: left;
+        
+    }
+
+    nav ul ul li{
+        clear:both;
+        background-color: darkturquoise;
+        padding:10px;
+        width: auto;
+    }
+
+    nav >ul >li>a{/*>Kindselektor>direktesKinddarunter*/
+        padding: 10px 15px;
+    }
+    
+
+    a{
+        color: lightseagreen;
+    }
+
+    #infobereich{
+        position:absolute;
+        top:60px;
+        left:10px;
+        z-index: 5;
+        background-color: cornflowerblue;
+    }
+
+    #einfache{
+        border: 1px solid blue;
+    }
+
+    .auf_Zeile_bleiben{
+        display: inline-block;
+    }
+
+    .auf_Zeile_bleiben::first-letter{
+        font-style: italic;
+    }
+
+    #kombinierte{
+        border: 1px solid grey;
+        text-align: left;
+    }
+
+    #kombinierte tr:nth-child(even){
+        background-color:mediumpurple;
+    }
+    
+    #kombinierte tr:nth-child(odd){
+        background-color: lightseagreen;
+    }
