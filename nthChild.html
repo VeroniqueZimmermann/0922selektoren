@@ -36,7 +36,31 @@
         opacity: 1.0;
         /* visibility oder display funktionieren nicht */
     }
+    
+    td:hover{
+        border: 1px solid black;
+    }
 
+    tr:nth-child(1):hover
+    {
+        background-color: mediumslateblue;
+    }
+
+    td:hover
+    {
+        background-color: lime;
+    }
+
+    .row:hover
+    {
+        background-color: lightgreen;
+    } /* färbt die ganze Reihe grün*/
+    
+
+    tr>td:first-child:hover ~ td ,tr>td:first-child:hover
+    {
+        color: magenta;
+    } /* färbt die ganze Zeile beim hover über 1. Zelle */
     
 
 </style>
